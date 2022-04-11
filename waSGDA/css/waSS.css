@@ -1,0 +1,125 @@
+﻿.LogoSoltrak {
+    max-width: 300px !important;
+}
+
+.CurPoi {
+    cursor: pointer !important;
+}
+
+.modal-lg-sol {
+    max-width: 80% !important;    
+}
+
+.modal-lg-sol-60 {
+    max-width: 60% !important;
+}
+
+.modal-scroll {
+    max-height: 80% !important;
+    overflow-y: auto;
+}
+
+.SumoSelect {
+    display: contents !important;
+}
+
+.h-400px {
+    height: 400px !important;
+}
+
+.ir-arriba {
+    display: none;
+    padding: 20px;
+    background: #024959;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+}
+
+.table-chk input[type=checkbox] {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+}
+
+/* SCALDERONC */
+.baS {
+    padding: .3em .75rem !important;
+}
+
+.borNav {
+    border: solid;
+    border-width: thin 1px;
+    border-color: #007bff;
+}
+
+.bor-Total {    
+    border-bottom: none !important;
+    border-left: none !important;
+    border-right: none !important;
+}
+
+.borSelect {
+    border: 1px solid #ced4da !important;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.mycheckbox input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.mycheckboxL input[type="checkbox"] {
+    margin-left: 5px;
+}
+
+.mycheckbox label {
+    margin-bottom: 0px !important;
+}
+
+.mycheckboxL label {
+    margin-bottom: 0px !important;
+}
+
+.TAR {
+    text-align: right !important;
+}
+
+/*****************************************/
+/* MODAL SLIDER                          */
+/*****************************************/
+
+.img-size {
+    padding: 0;
+    margin: 0;
+    width: 100% !important;
+    height: 100% !important;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.modal-content {
+    width: 900px;
+    border: none;
+}
+
+.modal-body {
+    padding: 0;
+}
+
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23009be1' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+    width: 30px;
+    height: 48px;
+}
+
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23009be1' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+    width: 30px;
+    height: 48px;
+}
