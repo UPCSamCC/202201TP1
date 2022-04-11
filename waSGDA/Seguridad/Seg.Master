@@ -1,0 +1,56 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Seg.master.cs" Inherits="waSGDA.Seguridad.Seg" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Seguridad SGDA</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <link href="../css/adminx.css" rel="stylesheet" />
+    <link href="../css/waSS.css" rel="stylesheet" />
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+    <script src="../js/vendor.js"></script>
+    <script src="../js/adminx.js"></script>
+
+    <script type="text/javascript" lang="javascript">
+        function vNoti(Texto, Tipo) {
+            const notifications = new window.notifications({
+                notificationSound: '',
+                volume: 0.2,
+                notification: {
+                    autoHide: true,
+                    playSound: true,
+                    duration: 5000,
+                    style: 'default',
+                    position: 'top',
+                }
+            });
+
+            notifications.fire(Texto, {
+                style: Tipo,
+            });            
+        }
+    </script>
+
+    <asp:ContentPlaceHolder ID="cpHead" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>    
+    <div class="adminx-container d-flex justify-content-center align-items-center pt-0">
+        <div class="page-login">
+            <div class="text-center">
+                <a class="navbar-brand mb-4 h1" href="Logueo.aspx">
+                    <img src="../img/Essalud.png" class="d-inline-block align-top mr-2 LogoSoltrak" alt="Soltrak" />
+                </a>
+            </div>
+            
+            <asp:ContentPlaceHolder ID="cpBody" runat="server"></asp:ContentPlaceHolder>            
+        </div>
+    </div>
+</body>
+</html>
+            
