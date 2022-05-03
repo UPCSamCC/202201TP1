@@ -65,8 +65,14 @@ namespace waSGDA.Base
 
             switch (TipoFormato)
             {
+                case "d/m/Y SH":
+                    FechaFormato = oDate.Day.ToString("00") + "/" + oDate.Month.ToString("00") + "/" + oDate.Year.ToString();
+                    break;
                 case "d/m/Y":
                     FechaFormato = oDate.Day.ToString("00") + "/" + oDate.Month.ToString("00") + "/" + oDate.Year.ToString() + " " + oDate.Hour.ToString("00") + ":" + oDate.Minute.ToString("00");
+                    break;
+                case "YMD SH":
+                    FechaFormato = oDate.Year.ToString() + oDate.Month.ToString("00") + oDate.Day.ToString("00");
                     break;
                 case "YMD":
                     FechaFormato = oDate.Year.ToString() + oDate.Month.ToString("00") + oDate.Day.ToString("00") + " " + oDate.Hour.ToString("00") + ":" + oDate.Minute.ToString("00");
@@ -83,6 +89,115 @@ namespace waSGDA.Base
             string sNombreMes = new DateTime(2020, NumeroMes, 1).ToString("MMMM", CultureInfo.CreateSpecificCulture("es"));
 
             return sNombreMes;
+        }
+
+        public List<BEPaginado> ObtenerPaginado(int TotalRegistros, decimal NroFilasXpagina, int NroPagina)
+        {
+            int Aux = -2;
+            List<BEPaginado> lstDatos = new List<BEPaginado>();
+            BEPaginado SimPrimero = new BEPaginado();
+            BEPaginado SimAnterior = new BEPaginado();
+            BEPaginado SimSiguiente = new BEPaginado();
+            BEPaginado SimUltimo = new BEPaginado();
+
+            decimal dcPaginas = TotalRegistros / NroFilasXpagina;
+            int PaginasTotal = Convert.ToInt32(Math.Ceiling(dcPaginas));
+
+            if (NroPagina <= 0) { NroPagina = 1; }
+            if (NroPagina >= PaginasTotal) { NroPagina = PaginasTotal; }
+
+            SimPrimero.Url = "1";
+            SimPrimero.Valor = "Primera";
+
+            SimAnterior.Url = (NroPagina - 1).ToString();
+            SimAnterior.Valor = "Anterior";
+
+            if (NroPagina == 1)
+            {
+                SimPrimero.Estilo = "disabled";
+                SimAnterior.Estilo = "disabled";
+            }
+
+            lstDatos.Add(SimPrimero);
+            lstDatos.Add(SimAnterior);
+
+            // -------------------------------------
+            // Creacion de la paginación - INI
+            // -------------------------------------
+
+            for (int i = 1; i <= 5; i++)
+            {
+                BEPaginado Pagina = new BEPaginado();
+                int iPagina = NroPagina + Aux;
+
+                if (iPagina < 1 || iPagina > PaginasTotal) { Pagina.Estilo = "d-none"; }
+                if (iPagina == NroPagina) { Pagina.Estilo = "active"; }
+
+                Pagina.Url = iPagina.ToString();
+                Pagina.Valor = iPagina.ToString();
+
+                lstDatos.Add(Pagina);
+
+                Aux = Aux + 1;
+            }
+
+            // -------------------------------------
+            // Creacion de la paginación - FIN
+            // -------------------------------------
+
+            SimSiguiente.Url = (NroPagina + 1).ToString();
+            SimSiguiente.Valor = "Siguiente";
+
+            SimUltimo.Url = PaginasTotal.ToString();
+            SimUltimo.Valor = "Última";
+
+            if (NroPagina == PaginasTotal)
+            {
+                SimSiguiente.Estilo = "disabled";
+                SimUltimo.Estilo = "disabled";
+            }
+
+            lstDatos.Add(SimSiguiente);
+            lstDatos.Add(SimUltimo);
+
+            return lstDatos;
+        }
+
+        public string claseMsj(string Etiqueta)
+        {
+            string Clase = "";
+
+            switch (Etiqueta)
+            {
+                case "primary":
+                    Clase = "alert alert-primary";
+                    break;
+                case "secondary":
+                    Clase = "alert alert-secondary";
+                    break;
+                case "success":
+                    Clase = "alert alert-success";
+                    break;
+                case "danger":
+                    Clase = "alert alert-danger";
+                    break;
+                case "warning":
+                    Clase = "alert alert-warning";
+                    break;
+                case "info":
+                    Clase = "alert alert-info";
+                    break;
+                case "light":
+                    Clase = "alert alert-light";
+                    break;
+                case "dark":
+                    Clase = "alert alert-dark";
+                    break;
+                default:
+                    break;
+            }
+
+            return Clase;
         }
     }
 }
