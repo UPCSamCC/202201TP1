@@ -47,6 +47,7 @@ namespace waSGDA.DAL
                         _BEUsuario.dFechaNacimiento = Convert.ToDateTime(Result["dFechaNacimiento"]);
                         _BEUsuario.iEdad = Convert.ToInt32(Result["iEdad"]);
                         _BEUsuario.cSexo = Result["cSexo"].ToString().ToUpper();
+                        _BEUsuario.vCorreo = Result["vCorreo"].ToString().ToUpper();
                         _BEUsuario.iCodDireccion = Convert.ToInt32(Result["iCodDireccion"]);
                         _BEUsuario.vDireccion = Result["vDireccion"].ToString().ToUpper();
                         _BEUsuario.cUbigeo = Result["cUbigeo"].ToString();
