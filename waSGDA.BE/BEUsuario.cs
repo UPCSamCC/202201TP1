@@ -16,6 +16,7 @@ namespace waSGDA.BE
         public DateTime dFechaNacimiento { get; set; }
         public int iEdad { get; set; }
         public string cSexo { get; set; }
+        public string vCorreo { get; set; }
         public int iCodDireccion { get; set; }
         public string vDireccion { get; set; }
         public string cUbigeo { get; set; }
