@@ -1,11 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/waSS.Master" AutoEventWireup="true" CodeBehind="Dashboard.aspx.cs" Inherits="waSGDA.Forms.Dashboard" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="cpHead" runat="server">
-    <title>SGDA - Inicio</title>
-
-    <script type="text/javascript">
- 
-    </script>   
+    <title>Essalud - Inicio</title>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="cpBody" runat="server">
@@ -21,69 +17,55 @@
     </div>
 
     <div class="row">
-       <div class="adminx-sidebar expand-hover push">
-           <ul class="sidebar-nav">
-               <li class="sidebar-nav-item">
-                   <a href="Dashboard.aspx" class="sidebar-nav-link active">
-                       <span class="sidebar-nav-icon">
-                           <i data-feather="home"></i>
-                       </span>
-                       <span class="sidebar-nav-name">Dashboard</span>
-                       <span class="sidebar-nav-end"></span>
-                   </a>
-               </li>
-
-               <li class="sidebar-nav-item">
-                   <a class="sidebar-nav-link collapsed" data-toggle="collapse" href="#navUI" aria-expanded="false" aria-controls="navUI">
-                       <span class="sidebar-nav-icon">
-                           <i data-feather="grid"></i>
-                       </span>
-                       <span class="sidebar-nav-name">A su servicio</span>
-                       <span class="sidebar-nav-end">
-                           <i data-feather="chevron-right" class="nav-collapse-icon"></i>
-                       </span>
-                   </a>
-
-                   <ul class="sidebar-sub-nav collapse" id="navUI">
-                       <li class="sidebar-nav-item">
-                           <a href="#" class="sidebar-nav-link">
-                               <span class="sidebar-nav-abbr">Ca</span>
-                               <span class="sidebar-nav-name">Campañas</span>
-                           </a>
-                       </li>
-
-                       <li class="sidebar-nav-item">
-                           <a href="#" class="sidebar-nav-link">
-                               <span class="sidebar-nav-abbr">Ci</span>
-                               <span class="sidebar-nav-name">Citas médicas</span>
-                           </a>
-                       </li>
-
-                       <li class="sidebar-nav-item">
-                           <a href="#" class="sidebar-nav-link">
-                               <span class="sidebar-nav-abbr">La</span>
-                               <span class="sidebar-nav-name">Laboratorio</span>
-                           </a>
-                       </li>
-
-                       <li class="sidebar-nav-item">
-                           <a href="#" class="sidebar-nav-link">
-                               <span class="sidebar-nav-abbr">Me</span>
-                               <span class="sidebar-nav-name">Medicamentos</span>
-                           </a>
-                       </li>
-
-                       <li class="sidebar-nav-item">
-                           <a href="#" class="sidebar-nav-link">
-                               <span class="sidebar-nav-abbr">Re</span>
-                               <span class="sidebar-nav-name">Resultados</span>
-                           </a>
-                       </li>
-                   </ul>
-               </li>
-           </ul>
+        <div class="col-md-6 col-lg-3 d-flex">
+            <div class="card border-0 bg-success text-white text-center mb-grid w-100">
+                <div class="d-flex flex-row align-items-center h-100">
+                    <div class="card-icon d-flex align-items-center h-100 justify-content-center">
+                        <i data-feather="check-square"></i>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-info-title">Campañas asistidas</div>
+                        <h3 class="card-title mb-0"><%= iCitasAsistidas %></h3>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    
+    <div class="row mb-grid">
+        <asp:Repeater ID="rpCitas" runat="server">
+            <ItemTemplate>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-header">Cita registrada</div>
+                        <div class="card-body">
+                            <h4 class="card-title"><%# Eval("vNombreCampana") %></h4>
+                            <p class="card-text"><%# Eval("sTextoCita") %></p>
+                            <a href="#" class="btn btn-primary">Cambiar fecha</a>
+                        </div>
+                    </div>
+                </div>
+            </ItemTemplate>
+        </asp:Repeater>
+    </div>
+
+    <div class="row">
+        <asp:Repeater ID="rpPlanesA" runat="server">
+            <ItemTemplate>
+                <div class="col-lg-3">
+                    <div class="card">
+                        <img class="card-img-top" src='<%# "../img/Die/" + Eval("vImagen") %>'  alt='<%# Eval("vTitulo") %>' title='<%# Eval("vTitulo") %>'>
+                        <div class="card-body">
+                            <h5 class="card-title"><%# Eval("vTitulo") %></h5>
+                            <p class="card-text"><%# Eval("vResumen") %></p>
+                            <a href="#" class="btn btn-primary">Leer completo</a>
+                        </div>
+                    </div>
+                </div>
+            </ItemTemplate>
+        </asp:Repeater>
+    </div>
+
 
     <button type="button" style="display: none;" id="btnShowPopup" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#largeModal"></button>
 
@@ -91,7 +73,7 @@
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Campañas activas</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Campaña - Para inscribirse, presione la imagen</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>

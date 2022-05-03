@@ -13,6 +13,24 @@ namespace waSGDA.Forms {
     public partial class Dashboard {
         
         /// <summary>
+        /// rpCitas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rpCitas;
+        
+        /// <summary>
+        /// rpPlanesA control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rpPlanesA;
+        
+        /// <summary>
         /// olOpc control.
         /// </summary>
         /// <remarks>
