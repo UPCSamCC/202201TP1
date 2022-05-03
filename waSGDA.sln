@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "waSGDA.BLL", "waSGDA.BLL\wa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "waSGDA.DAL", "waSGDA.DAL\waSGDA.DAL.csproj", "{94789DC7-C0C2-461C-9C84-E0E1FD1166B6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mail", "Mail\Mail.csproj", "{B3511D83-DC48-4C1D-9CB2-2192AE25F4C9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{94789DC7-C0C2-461C-9C84-E0E1FD1166B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94789DC7-C0C2-461C-9C84-E0E1FD1166B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94789DC7-C0C2-461C-9C84-E0E1FD1166B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3511D83-DC48-4C1D-9CB2-2192AE25F4C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3511D83-DC48-4C1D-9CB2-2192AE25F4C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3511D83-DC48-4C1D-9CB2-2192AE25F4C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3511D83-DC48-4C1D-9CB2-2192AE25F4C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
